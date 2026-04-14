@@ -10,6 +10,24 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 
 
 ----------------------------------------------------------------------
+                       BRUTE FORCE APPROACH
+----------------------------------------------------------------------
+class Solution:
+    def maxProfit(self, prices):
+        maxProfit = 0
+
+        # Loop through all possible buy and sell days
+        for i in range(len(prices)):
+            for j in range(i + 1, len(prices)):
+                profit = prices[j] - prices[i]
+                maxProfit = max(maxProfit, profit)
+        return maxProfit
+    
+# Time complexity O(n^2)
+# Space complexity O(1) 
+
+
+----------------------------------------------------------------------
                        OPTIMAL APPROACH
 ----------------------------------------------------------------------
 (greedy approach)
